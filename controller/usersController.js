@@ -9,13 +9,14 @@ const getUsers = async (req, res) => {
 
 const createusers = async (req, res) => {
     try {
+        console.log(req.body.price);
         if (req.body.name && req.body.mobile) {
             const createUser = await HostelUsers.create({
                 name: req.body.name,
                 address: req.body.address,
                 mobile: req.body.mobile,
                 image: `/uploads/${req.file?.filename}`,
-                FathersName: req.body?.fathersName,
+                FathersName: req.body?.FathersName,
                 price:req.body?.price
 
             })
