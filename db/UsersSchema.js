@@ -21,6 +21,10 @@ const HostelUsers  =  new mongoose.Schema({
     FathersName:{
         type:String,
         default:''
+    },
+    price:{
+        type:Number,
+        default:0
     }
     
 })

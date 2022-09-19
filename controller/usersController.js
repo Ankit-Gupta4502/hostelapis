@@ -15,7 +15,9 @@ const createusers = async (req, res) => {
                 address: req.body.address,
                 mobile: req.body.mobile,
                 image: `/uploads/${req.file?.filename}`,
-                FathersName: req.body.fathersName,
+                FathersName: req.body?.fathersName,
+                price:req.body?.price
+
             })
             return res.status(200).json({ message: 'Successfully created', createUser })
         }
