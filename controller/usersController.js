@@ -9,7 +9,6 @@ const getUsers = async (req, res) => {
 
 const createusers = async (req, res) => {
     try {
-        console.log(req.body.price);
         if (req.body.name && req.body.mobile) {
             const createUser = await HostelUsers.create({
                 name: req.body.name,
@@ -23,10 +22,10 @@ const createusers = async (req, res) => {
             return res.status(200).json({ message: 'Successfully created', createUser })
         }
 
-        if (!name) {
+        if (!req.body.name) {
             return res.status(400).send({ name: 'Name is required.' })
         }
-        if (!mobile) {
+        if (!req.body.mobile) {
             return res.status(400).send({ mobile: 'Name is required.' })
         }
         else {
