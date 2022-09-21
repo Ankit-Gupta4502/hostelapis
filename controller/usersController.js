@@ -38,14 +38,12 @@ const createusers = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  const { id } = req.params;
-  if (id) {
-    const updatUser = await HostelUsers.findOneAndUpdate({ _id: id }, req.body);
-    if (updatetask) {
-      return res.status(200).json(updatUser);
-    } else {
-      return res.status(400).json({ message: "please provide a valid id." });
-    }
+  const updatUser = await HostelUsers.findOneAndUpdate(
+    { _id: req.params.id },
+    req.body
+  );
+  if (updatUser) {
+    return res.status(200).json(updatUser);
   } else {
     return res.status(400).json({ message: "please provide a valid id." });
   }
