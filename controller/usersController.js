@@ -43,7 +43,9 @@ const updateUser = async (req, res) => {
     { ...req.body, image: `/uploads/${req.file?.filename}` }
   );
   if (updatUser) {
-    return res.status(200).json(updatUser);
+    return res
+      .status(200)
+      .json({ ...updatUser, message: "data added successfully" });
   } else {
     return res.status(400).json({ message: "please provide a valid id." });
   }
