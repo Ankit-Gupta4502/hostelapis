@@ -40,7 +40,7 @@ const createusers = async (req, res) => {
 const updateUser = async (req, res) => {
   const updatUser = await HostelUsers.findOneAndUpdate(
     { _id: req.params.id },
-    req.body
+    { ...req.body, image: `/uploads/${req.file?.filename}` }
   );
   if (updatUser) {
     return res.status(200).json(updatUser);
