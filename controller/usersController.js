@@ -16,6 +16,7 @@ const createusers = async (req, res) => {
         image: `/uploads/${req.file?.filename}`,
         FathersName: req.body?.FathersName,
         price: req.body?.price,
+        date: req.body?.date,
       });
       return res
         .status(200)
