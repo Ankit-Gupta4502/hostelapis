@@ -25,10 +25,10 @@ const createusers = async (req, res) => {
     }
 
     if (!req.body.name) {
-      return res.status(400).send({ name: "Name is required." });
+      return res.status(400).send({ name: "Name is required./" });
     }
     if (!req.body.mobile) {
-      return res.status(400).send({ mobile: "Name is required." });
+      return res.status(400).send({ mobile: "Mobile number is required." });
     } else {
       return res
         .status(400)
