@@ -30,6 +30,10 @@ const HostelUsers = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  gender: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("HostelUsers", HostelUsers);

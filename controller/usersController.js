@@ -17,6 +17,7 @@ const createusers = async (req, res) => {
         FathersName: req.body?.FathersName,
         price: req.body?.price,
         date: req.body?.date,
+        gender: req.body?.gender,
       });
       return res
         .status(200)
