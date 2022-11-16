@@ -6,7 +6,7 @@ const cors = require("cors")
 const bodyparser = require("body-parser")
 const detailRoutes = require("./routes/detailUpdateRoutes")
 app.use(cors())
-app.use(bodyparser.json()) 
+app.use(express.json())
 
 app.use("/users",routes)
 app.use('/details',detailRoutes)
